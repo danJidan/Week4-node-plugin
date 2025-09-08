@@ -1,9 +1,16 @@
 import chalk from 'chalk';
 import cowsay from 'cowsay';
 import figlet from 'figlet';
+import dayjs from 'dayjs';
+import 'dayjs/locale/id.js';
+dayjs.locale('id');
+import boxen from 'boxen';
 
 const nama = 'Muhammad Zidan Azzaki';
 const nim = 'F1D022080';
+
+const tanggal = dayjs().format('dddd, DD MMMM YYYY HH:mm:ss');
+console.log(chalk.magenta(`Sekarang: ${tanggal}`));
 
 console.log(chalk.blue(chalk.bold(chalk.underline(nama))));
 console.log(chalk.yellow(nim));
@@ -25,9 +32,19 @@ console.log(cowsay.say({
 
 figlet(nama, function(err, data) {
     if (err) {
-        console.log('Ada yang salah...');
+        console.log('kayak yang salah...');
         console.dir(err);
         return;
     }
-    console.log(chalk.green(data));
+    const box = boxen(
+        chalk.green(data),
+        {
+          padding: 1,
+          margin: 1,
+          borderStyle: 'round',
+          borderColor: 'cyan',
+        }
+      );
+    
+      console.log(box);
 });

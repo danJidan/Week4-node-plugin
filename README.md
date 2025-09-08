@@ -1,6 +1,6 @@
 # melakukan instalasi chalk, cowsay, dan figlet dengan memakai npm
 
-npm install chalk cowsay figlet
+npm install chalk cowsay figlet dayjs boxen
 
 # Menjalankan code 
 
@@ -12,4 +12,4 @@ karena memakai syntax module ES tapi belum ada melakukan deklarasi module jadi h
 
 # hasil 
 
-![alt text](image-1.png)
+![alt text](image-2.png)
